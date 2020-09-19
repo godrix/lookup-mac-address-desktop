@@ -1,0 +1,19 @@
+{
+  "name": "lookup-mac-anddress-desktop",
+  "version": "1.0.0",
+  "main": "app.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "build-osx": "electron-packager . $npm_package_productName --out=dist/osx --platform=darwin --arch=x64 --icon=src/assets/Icon.icns && npm run codesign",
+
+    "build-linux": "electron-packager . $npm_package_productName --overwrite --asar=true --platform=linux --arch=x64  --prune=true --out=dist/linux --icon=src/assets/Icon.png",
+
+    "build-win": "electron-packager . $npm_package_productName --out=dist/win --platform=win32 --arch=ia32 --icon=src/assets/Icon.ico"
+
+  },
+  "devDependencies": {
+    "electron": "^10.1.2",
+    "electron-packager": "^15.1.0"
+  }
+}

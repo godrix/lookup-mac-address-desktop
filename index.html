@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Lookup MAC Address</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+	body{
+		 margin: 0;
+			padding: 0;
+			width: 430px;
+      overflow: hidden;
+	}
+		.container {
+			margin-top: 10px;
+			display: flex;
+			flex: 1;
+			flex-direction: column;
+			align-items: center;
+		}
+
+		.container input {
+			flex: 1;
+			margin-right: 5px;
+			cursor: pointer;
+			background: none;
+			outline: none;
+			color: #909090;
+			text-transform: uppercase;
+			font-size: 16px;
+			border: solid #eee 2px;
+			border-radius: 3px;
+			height: 35px;
+			width: 250px;
+		}
+
+		.container input::placeholder {
+		text-transform: none;
+		color:#ccc;
+		}
+
+		.container button {
+			cursor: pointer;
+			background: #2980B9;
+			color: #fff;
+			width: 80px;
+			height: 40px;
+			font-size: 14px;
+			border: none;
+			border-radius: 3px;
+		}
+		.container button:disabled {
+			cursor:not-allowed;
+      opacity: 0.5;
+		}
+
+		.container footer {
+			background-color: #f0f0f0;
+			color: #636363;
+			font-family: 'Roboto', sans-serif;
+			font-size: 11px;
+			margin-top: 9px;
+			padding: 10px;
+			text-align: center;
+			width: 100%;
+		}
+
+		.container footer a {
+			text-decoration: none;
+			color: #2980B9;
+		}
+
+    #snackbar {
+  visibility: hidden; /* Hidden by default. Visible on click */
+  min-width: 250px; /* Set a default minimum width */
+  margin-left: -125px; /* Divide value of min-width by 2 */
+  background-color: #333; /* Black background color */
+  color: #fff; /* White text color */
+  text-align: center; /* Centered text */
+  border-radius: 2px; /* Rounded borders */
+  padding: 16px; /* Padding */
+  position: fixed; /* Sit on top of the screen */
+  z-index: 1; /* Add a z-index if needed */
+  left: 50%; /* Center the snackbar */
+  bottom: 30px; /* 30px from the bottom */
+}
+
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+#snackbar.show {
+  visibility: visible; /* Show the snackbar */
+  /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+  However, delay the fade out process for 2.5 seconds */
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<form>
+			<input type="text" placeholder="Search for MAC Address" autofocus required>
+			<button type="submit">Find</button>
+		</form>
+		<footer>
+      Made with &hearts; by <a target="_blank" href="https://github.com/godrix">@godrix</a>
+      <div id="snackbar"></div>
+		</footer>
+	</div>
+  
+</body>
+
+<script src="./src/LMA.js"></script>
+
+</html>
