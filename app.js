@@ -15,6 +15,9 @@ function createWindow () {
 
   // e carrega o arquivo index.html do seu aplicativo.
   win.loadFile('index.html')
+  
+  // remove informações de menu de contexto
+  win.removeMenu();
 
   // Abrir o DevTools (aba de ferramentas para desenvolvedores).
   //win.webContents.openDevTools()
@@ -41,7 +44,3 @@ app.on('activate', () => {
     createWindow()
   }
 })
-
-// Nesse arquivo, você pode incluir o resto do código principal
-// de processos do seu aplicativo.
-// Você também pode colocar eles em arquivos separados e requeridos-as aqui.
